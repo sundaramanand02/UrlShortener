@@ -64,4 +64,17 @@ public final class JwtUtil {
                 .getBody()
                 .getSubject();
     }
+
+    public static long getRefreshTokenValidity() {
+        return refreshTokenValidity;
+    }
+
+    public static Date extractExpiration(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(getSigningKey())
+                .build()
+                .parseClaimsJws(token)
+                .getBody()
+                .getExpiration();
+    }
 }

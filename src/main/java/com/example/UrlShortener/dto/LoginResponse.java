@@ -3,9 +3,8 @@ package com.example.UrlShortener.dto;
 import lombok.AllArgsConstructor;
 
 public class LoginResponse {
-    public LoginResponse(String accessToken, String refreshToken) {
+    public LoginResponse(String accessToken) {
         this.accessToken = accessToken;
-        this.refreshToken = refreshToken;
     }
 
     public String getAccessToken() {
@@ -15,15 +14,5 @@ public class LoginResponse {
     public void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
     }
-
-    public String getRefreshToken() {
-        return refreshToken;
-    }
-
-    public void setRefreshToken(String refreshToken) {
-        this.refreshToken = refreshToken;
-    }
-
     private String accessToken;
-    private String refreshToken;
 }
